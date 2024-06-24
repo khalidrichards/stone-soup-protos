@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+import "pantry.proto";
+import "contact_details.proto";
+
+message Name {
+    string first = 1;
+    string last = 2;
+    string preferred = 3;
+}
+
+message Address {
+    string street1 = 1;
+    string street2 = 2;
+    string city = 3;
+    string state = 4;
+    string zip = 5;
+}
+
+message UserDetails {
+    Name name = 1;
+    ContactDetails contact_details = 2;
+    Address address = 3;
+}
+
+message User {
+    string uuid = 1;
+    UserDetails user_details = 2;
+    Pantry pantry = 3;
+}

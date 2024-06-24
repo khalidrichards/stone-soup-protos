@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+enum PantryItemType {
+    PROTEIN = 1;
+    VEGETABLE = 2;
+    FRUIT = 3;
+    DAIRY = 4;
+    SPICE = 5;
+    GRAIN = 6;
+    OIL = 7;
+}
+
+/*
+ * Defines a type for each pantry item.
+ * TODO: Figure out how to do the expiration date. Maybe we don't care about that here
+ * and it's something we do on the backend somehow?
+ */
+message PantryItem {
+    PantryItemType type = 1;
+    string name = 2;
+    int32 quantity = 3;
+    int64 date_acquired = 4;
+    /* int64 expiration_date = 5 */
+}
+
+message Pantry {
+    repeated PantryItem items = 1;
+}

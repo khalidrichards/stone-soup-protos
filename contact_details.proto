@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+enum PhoneNumberType {
+    HOME = 1;
+    CELL = 2;
+    WORK = 3;
+}
+
+message PhoneNumber {
+    PhoneNumberType type = 1;
+    string number = 2;
+}
+
+enum AlternativeContactType {
+    FACEBOOK_MESSENGER = 1;
+    INSTAGRAM = 2;
+    TWITTER = 3;
+    DISCORD = 4;
+}
+message AlternativeContactInfo {
+    AlternativeContactType type = 1;
+    string screen_name = 2;
+}
+
+message ContactDetails {
+    repeated PhoneNumber numbers = 1;
+    repeated AlternativeContactInfo alternative_contact_methods = 2;
+    repeated string emails = 3;
+}
