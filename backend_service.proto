@@ -53,11 +53,11 @@ message GetPantryForUserResponse {
 
 service BackendService {
     /* User rpc calls */
-    rpc AddUser (AddUserRequest) returns AddUserResponse;
-    rpc GetUser (GetUserRequest) returns GetUserResponse;
-    rpc GetUsersWithinRadius (GetUsersWithinRadiusRequest) returns GetUsersWithinRadiusResponse;
+    rpc AddUser (AddUserRequest) returns (AddUserResponse);
+    rpc GetUser (GetUserRequest) returns (GetUserResponse);
+    rpc GetUsersWithinRadius (GetUsersWithinRadiusRequest) returns (GetUsersWithinRadiusResponse);
 
     /* Pantry rpc calls */
-    rpc AddItemToPantry (AddItemToPantryRequest) returns AddItemToPantryResponse;
-    rpc GetPantryForUser(GetPantryForUserRequest) returns GetPantryForUserResponse;
+    rpc AddItemToPantry (AddItemToPantryRequest) returns (AddItemToPantryResponse);
+    rpc GetPantryForUser(GetPantryForUserRequest) returns (GetPantryForUserResponse);
 }
