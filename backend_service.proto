@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+import "user.proto";
+
+message AddUserRequest {
+
+}
+
+message AddUserResponse {
+
+}
+
+message GetUserRequest {
+
+}
+
+message GetUserResponse {
+
+}
+
+message GetUsersWithinRadiusRequest {
+
+}
+
+message GetUsersWithinRadiusResponse {
+
+}
+
+message AddItemToPantryRequest {
+
+}
+
+message AddItemToPantryResponse {
+
+}
+
+message GetPantryForUserRequest {
+
+}
+
+message GetPantryForUserResponse {
+    
+}
+
+service BackendService {
+    /* User rpc calls */
+    rpc AddUser () returns AddUserResponse;
+    rpc GetUser () returns GetUserResponse;
+    rpc GetUsersWithinRadius () return GetUsersWithinRadiusResponse;
+
+    /* Pantry rpc calls */
+    rpc AddItemToPantry () return AddItemToPantryResponse;
+    rpc GetPantryForUser() return GetPantryForUserResponse;
+}

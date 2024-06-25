@@ -20,7 +20,7 @@ message PantryItem {
     string name = 2;
     int32 quantity = 3;
     int64 date_acquired = 4;
-    /* int64 expiration_date = 5 */
+    int64 expiration_date = 5;
 }
 
 message Pantry {
