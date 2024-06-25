@@ -55,9 +55,9 @@ service BackendService {
     /* User rpc calls */
     rpc AddUser (AddUserRequest) returns AddUserResponse;
     rpc GetUser (GetUserRequest) returns GetUserResponse;
-    rpc GetUsersWithinRadius (GetUsersWithinRadiusRequest) return GetUsersWithinRadiusResponse;
+    rpc GetUsersWithinRadius (GetUsersWithinRadiusRequest) returns GetUsersWithinRadiusResponse;
 
     /* Pantry rpc calls */
-    rpc AddItemToPantry (AddItemToPantryRequest) return AddItemToPantryResponse;
-    rpc GetPantryForUser(GetPantryForUserRequest) return GetPantryForUserResponse;
+    rpc AddItemToPantry (AddItemToPantryRequest) returns AddItemToPantryResponse;
+    rpc GetPantryForUser(GetPantryForUserRequest) returns GetPantryForUserResponse;
 }
