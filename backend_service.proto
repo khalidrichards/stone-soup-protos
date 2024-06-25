@@ -1,54 +1,63 @@
 syntax = "proto3";
 
 import "user.proto";
+import "pantry.proto";
 
 message AddUserRequest {
-
+    Name name = 1;
+    Address address = 2;
+    ContactDetails contact_details = 3;
+    string pronouns = 4;
 }
 
 message AddUserResponse {
-
+    User user = 1;
 }
 
 message GetUserRequest {
-
+    string user_id = 1;
 }
 
 message GetUserResponse {
-
+    User user = 1;
 }
 
 message GetUsersWithinRadiusRequest {
-
+    double latitude = 1;
+    double longitude = 2;
+    double radius = 3;
 }
 
 message GetUsersWithinRadiusResponse {
-
+    repeated User users = 1;
 }
 
 message AddItemToPantryRequest {
-
+    string item_id = 1;
+    string user_id = 2;
 }
 
 message AddItemToPantryResponse {
-
+    string user_id = 1;
+    Pantry pantry = 2;
 }
 
 message GetPantryForUserRequest {
-
+    string user_id = 1;
 }
 
 message GetPantryForUserResponse {
-    
+    string user_id = 1;
+    Pantry pantry = 2;
 }
 
 service BackendService {
     /* User rpc calls */
-    rpc AddUser () returns AddUserResponse;
-    rpc GetUser () returns GetUserResponse;
-    rpc GetUsersWithinRadius () return GetUsersWithinRadiusResponse;
+    rpc AddUser (AddUserRequest) returns AddUserResponse;
+    rpc GetUser (GetUserRequest) returns GetUserResponse;
+    rpc GetUsersWithinRadius (GetUsersWithinRadiusRequest) return GetUsersWithinRadiusResponse;
 
     /* Pantry rpc calls */
-    rpc AddItemToPantry () return AddItemToPantryResponse;
-    rpc GetPantryForUser() return GetPantryForUserResponse;
+    rpc AddItemToPantry (AddItemToPantryRequest) return AddItemToPantryResponse;
+    rpc GetPantryForUser(GetPantryForUserRequest) return GetPantryForUserResponse;
 }
