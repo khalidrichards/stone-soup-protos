@@ -15,12 +15,15 @@ message Address {
     string city = 3;
     string state = 4;
     string zip = 5;
+    double latitude = 6;
+    double longitude = 7;
 }
 
 message UserDetails {
     Name name = 1;
     ContactDetails contact_details = 2;
     Address address = 3;
+    string pronouns = 4;
 }
 
 message User {
