@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 enum PantryItemType {
+    UNKNOWN = 0;
     PROTEIN = 1;
     VEGETABLE = 2;
     FRUIT = 3;
