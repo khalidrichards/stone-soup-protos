@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "user.proto";
 import "pantry.proto";
+import "contact_details.proto";
 
 message AddUserRequest {
     Name name = 1;
