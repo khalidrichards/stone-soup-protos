@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 enum PhoneNumberType {
-    UNKNOWN = 0;
+    UNKNOWN_NUMBER_TYPE = 0;
     HOME = 1;
     CELL = 2;
     WORK = 3;
@@ -13,7 +13,7 @@ message PhoneNumber {
 }
 
 enum AlternativeContactType {
-    UNKNOWN = 0;
+    UNKNOWN_CONTACT_TYPE = 0;
     FACEBOOK_MESSENGER = 1;
     INSTAGRAM = 2;
     TWITTER = 3;
